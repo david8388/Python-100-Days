@@ -11,6 +11,6 @@ for num in range(1, n + 1):
 
 fmn = 1
 for num in range(1, m - n + 1):
-    fmn *= 1
+    fmn *= num
 
 print(fm // fn // fmn)

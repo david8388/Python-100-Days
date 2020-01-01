@@ -10,8 +10,11 @@ class Test:
 
 def main():
     test = Test('hello')
-    test.__bar()
-    print(test.__foo)
+    test2 = Test('Foo')
+    # test.__bar() # AttributeError: 'Test' object has no attribute '__bar'
+    test2._Test__bar() # print Foo __bar
+    # print(test.__foo) # AttributeError: 'Test' object has no attribute '__foo'
+    print(test2._Test__foo) # print Foo
 
 
 if __name__ == '__main__':

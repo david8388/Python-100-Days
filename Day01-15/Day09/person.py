@@ -1,25 +1,28 @@
 class Person(object):
+
+    __slots__ = ('_name', '_age', '_gender')
+
     def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+        self._name = name
+        self._age = age
 
     @property
     def name(self):
-        return self.__name
+        return self._name
 
     @property
     def age(self):
-        return self.__age
+        return self._age
 
     @age.setter
     def age(self, age):
-        self.__age = age
+        self._age = age
 
     def play(self):
-        if self.__age <= 16:
-            print('%s正在玩風箏' % self.__name)
+        if self._age <= 16:
+            print('%s正在玩風箏' % self._name)
         else:
-            print('%s在玩桌遊' % self.__name)
+            print('%s在玩桌遊' % self._name)
 
 
 def main():
@@ -27,6 +30,8 @@ def main():
     person.play()
     person.age = 22
     person.play()
+    person._gender = 'man'
+    # person._isSales = False # AttributeError: 'Person' object has no attribute '_isSales'
 
 
 if __name__ == '__main__':

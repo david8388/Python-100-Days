@@ -1,5 +1,8 @@
-from Pil import Image
+from PIL import Image
+im = Image.open("2020_avg.jpeg")
 
-image = Image.open('2020_avg.jpeg')
-image.format, image.size, image.mode = ('JPEG', (500, 750), 'RGB')
-image.show()
+im.format = 'jpeg'
+im.resize((768, 1280))
+im.mode = 'RGB'
+print(im.format, im.mode, im.size)
+im.show()

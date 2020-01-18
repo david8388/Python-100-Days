@@ -10,8 +10,10 @@ im = Image.open("2020_avg.jpeg")
 # rect = 10, 10, 310, 310
 # im.crop(rect).show()
 
-size = 150, 150
-im.thumbnail(size)
-im.show()
+# size = 150, 150
+# im.thumbnail(size)
+# im.show()
+
+im.rotate(180).show()
 
 

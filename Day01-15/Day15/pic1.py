@@ -7,8 +7,11 @@ im = Image.open("2020_avg.jpeg")
 # print(im.format, im.mode, im.size)
 # im.show()
 
-rect = 10, 10, 310, 310
-im.crop(rect).show()
+# rect = 10, 10, 310, 310
+# im.crop(rect).show()
 
+size = 150, 150
+im.thumbnail(size)
+im.show()
 
 

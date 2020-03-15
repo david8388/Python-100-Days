@@ -84,3 +84,25 @@ def unique_elements(numbers):
 print('10. unique elements ', unique_elements([1, 1, 2, 7]))
 
 
+# 11. find the avg of a list of numbers
+
+def average(*args):
+    return sum(args, 0.0) / len(args)
+
+
+print('11. avg of a list of numbers ', average(1, 5, 7))
+
+
+# 12. check if a list contains all unique values
+
+def unique(list):
+    if len(list) == len(set(list)):
+        print('all elements are unique')
+    else:
+        print('list has duplicate')
+
+
+print('12. list is all unique values')
+unique([1, 2, 3, 4, 4])
+
+

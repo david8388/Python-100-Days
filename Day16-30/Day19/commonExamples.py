@@ -1,3 +1,6 @@
+from collections import Counter
+import math
+
 # 1. swap values
 
 a = 6
@@ -106,3 +109,31 @@ print('12. list is all unique values')
 unique([1, 2, 3, 4, 4])
 
 
+# 13. Track frequency of elements in a list
+
+list = [1, 2, 2, 3, 4, 5, 8, 8]
+
+count = Counter(list)
+
+print('13. frequency of a list', count)
+
+# 14. the most frequent element in a list
+
+
+def most_frequent(list):
+    return max(set(list), key=list.count)
+
+
+numbers = [1, 2, 2, 3, 4, 5, 8, 8]
+
+print('14. find the most frequent element of a list', most_frequent(numbers))
+
+
+# 15. convert an angle from degrees to radians
+
+
+def degrees_to_radians(deg):
+    return deg * math.pi / 180
+
+
+print('15. degrees to radians ', degrees_to_radians(90))

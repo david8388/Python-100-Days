@@ -1,3 +1,6 @@
+# Runtime: 24 ms
+# Memory Usage: 13.6 MB
+
 class Solution:
     def reverse(self, x: int) -> str:
         limit = pow(2, 31)

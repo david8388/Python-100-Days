@@ -4,32 +4,23 @@ class TreeNode:
         self.left = None
         self.right = None
 
-# Runtime: 96 ms
-# Memory Usage: 15.4 MB
+# Runtime: 76 ms
+# Memory Usage: 15.3 MB
 
 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        if root == None:
+        if root is None:
             return 0
         else:
             leftHeight = 0
             rightHeight = 0
-            if root.left != None:
-                leftHeight = self.findHeight(root.left)
-            if root.right != None:
-                rightHeight = self.findHeight(root.right)
+            if root.left is not None:
+                leftHeight = self.maxDepth(root.left)
+            if root.right is not None:
+                rightHeight = self.maxDepth(root.right)
             height = leftHeight if leftHeight > rightHeight else rightHeight
             return height + 1
-
-    def findHeight(self, root: TreeNode) -> int:
-        leftHeight = 1
-        rightHeight = 1
-        if root.left != None:
-            leftHeight += self.findHeight(root.left)
-        if root.right != None:
-            rightHeight += self.findHeight(root.right)
-        return leftHeight if leftHeight > rightHeight else rightHeight
 
 
 bt = TreeNode(3)

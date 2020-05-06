@@ -1,3 +1,4 @@
+import collections
 from typing import List
 
 # Runtime: 36 ms
@@ -11,14 +12,38 @@ class TreeNode:
         self.right = right
 
 
+#class Solution:
+#    def rightSideView(self, root: TreeNode) -> List[int]:
+#        if root is None:
+#            return []
+#        rootVal = [root.val]
+#        right = self.rightSideView(root.right)
+#        left = self.rightSideView(root.left)
+#        return rootVal + right + left[len(right):]
+
+# Runtime: 36 ms
+# Memory Usage: 13.9 MB
+
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
         if root is None:
             return []
-        rootVal = [root.val]
-        right = self.rightSideView(root.right)
-        left = self.rightSideView(root.left)
-        return rootVal + right + left[len(right):]
+        result = []
+        queue = collections.deque([root])
+        while queue:
+            size = len(queue)
+            last_node = None
+            for _ in range(size):
+                node = queue.popleft()
+                print(node.val)
+                last_node = node
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            if last_node:
+                result.append(last_node.val)
+        return result
 
 
 problem = Solution()
